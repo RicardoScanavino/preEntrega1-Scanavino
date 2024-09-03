@@ -3,8 +3,13 @@
 function calcualarEdad(){
 
     let cantidadPesonas = parseInt(prompt("ingrese la cantidad de persona que desea registrar y calcular el promedio de edad"));
-    let sumaEdades = 0;
 
+    //validando que no se ingrese un string
+    while (Number.isNaN(cantidadPesonas)) {
+        cantidadPesonas = parseInt(prompt("ingrese la cantidad de persona que desea registrar y calcular el promedio de edad"));
+    }
+
+    let sumaEdades = 0;
     for (let i=1; i<=cantidadPesonas; i++){
         let edad = parseInt(prompt("ingrese la edad de la persona"));
         
@@ -12,7 +17,7 @@ function calcualarEdad(){
         while(Number.isNaN(edad) || edad < 0){
             edad = parseInt(prompt("ingrese la edad de la persona correctamente"));
         }
-
+        
         sumaEdades = sumaEdades + edad;
     }
 
